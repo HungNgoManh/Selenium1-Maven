@@ -1,21 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6206" started-at="2018-12-12T07:52:36Z" finished-at="2018-12-12T07:52:42Z">
+  <suite name="Default suite" duration-ms="14220" started-at="2018-12-12T09:59:31Z" finished-at="2018-12-12T09:59:45Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6206" started-at="2018-12-12T07:52:36Z" finished-at="2018-12-12T07:52:42Z">
-      <class name="Common.EmailTests">
-        <test-method status="PASS" signature="connectToEmail()[pri:0, instance:Common.EmailTests@26be92ad]" name="connectToEmail" is-config="true" duration-ms="3166" started-at="2018-12-12T07:52:36Z" finished-at="2018-12-12T07:52:39Z">
+    <test name="Default test" duration-ms="14220" started-at="2018-12-12T09:59:31Z" finished-at="2018-12-12T09:59:45Z">
+      <class name="testcase.TC01_TC04">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:testcase.TC01_TC04@5b275dab]" name="beforeClass" is-config="true" duration-ms="10298" started-at="2018-12-12T09:59:31Z" finished-at="2018-12-12T09:59:41Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- connectToEmail -->
-        <test-method status="PASS" signature="testVerificationCode()[pri:0, instance:Common.EmailTests@26be92ad]" name="testVerificationCode" duration-ms="3017" started-at="2018-12-12T07:52:39Z" finished-at="2018-12-12T07:52:42Z">
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="Initdriver()[pri:0, instance:testcase.TC01_TC04@5b275dab]" name="Initdriver" is-config="true" duration-ms="25" started-at="2018-12-12T09:59:41Z" finished-at="2018-12-12T09:59:41Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testVerificationCode -->
-      </class> <!-- Common.EmailTests -->
+        </test-method> <!-- Initdriver -->
+        <test-method status="PASS" signature="TC01()[pri:1, instance:testcase.TC01_TC04@5b275dab]" name="TC01" duration-ms="2243" started-at="2018-12-12T09:59:41Z" description="Test Login success with correct welcome message" finished-at="2018-12-12T09:59:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC01 -->
+        <test-method status="PASS" signature="Initdriver()[pri:0, instance:testcase.TC01_TC04@5b275dab]" name="Initdriver" is-config="true" duration-ms="1" started-at="2018-12-12T09:59:44Z" finished-at="2018-12-12T09:59:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Initdriver -->
+        <test-method status="PASS" signature="TC04()[pri:3, instance:testcase.TC01_TC04@5b275dab]" name="TC04" duration-ms="1002" started-at="2018-12-12T09:59:44Z" description="Test Contact Email contains correct href value" finished-at="2018-12-12T09:59:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC04 -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:testcase.TC01_TC04@5b275dab]" name="afterClass" is-config="true" duration-ms="627" started-at="2018-12-12T09:59:45Z" finished-at="2018-12-12T09:59:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- testcase.TC01_TC04 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
