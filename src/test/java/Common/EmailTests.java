@@ -1,13 +1,8 @@
 package Common;
 
-import java.util.concurrent.TimeUnit;
-
-import javax.mail.Message;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class EmailTests {
@@ -15,7 +10,7 @@ public class EmailTests {
 	  private static EmailUtils emailUtils;
 	  WebDriver driver;
 
-	
+	@BeforeTest
 	  public static void connectToEmail() {
 	    try {
 	      emailUtils = new EmailUtils("hung.ngo.test@gmail.com", "Matkhau~1", "smtp.gmail.com", EmailUtils.EmailFolder.INBOX);
@@ -25,7 +20,7 @@ public class EmailTests {
 	    }
 	  }
 	  
-	
+	@Test
 	  public void testVerificationCode() {
 	    try {
 	      //TODO: Execute actions to send verification code to email
