@@ -30,10 +30,10 @@ public class TestBase {
 	}
 	
 
-	@AfterClass
-	public void afterClass() {
-		driver.quit();
-	}
+//	@AfterClass
+//	public void afterClass() {
+//		driver.quit();
+//	}
 	
 	public void connectToEmail() {
 		try {

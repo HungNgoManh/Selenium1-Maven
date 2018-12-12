@@ -31,7 +31,7 @@ public class TC07 extends TestBase {
 		// VP: New account is created and message "Thank you for registering your
 		// account" appears.
 		AssertJUnit.assertEquals(Constant.MessageRegisterSuccess, registerPage.GetRegisterSuccessMessage());
-		 
+		 registerPage.ActiveEmail();
 	}	
 	 
 }
