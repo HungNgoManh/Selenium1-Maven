@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import Common.Constant;
 import Common.EmailUtils;
 
 public class RegisterPage {
@@ -30,16 +31,16 @@ public class RegisterPage {
 	@FindBy(xpath = "//h1[normalize-space(text())='Thank you for registering your account']")
 	WebElement RegisterSuccessMessage;
 	// Email input text box
-	@FindBy(xpath = "//input[@id='email']")
+	@FindBy(id="email")
 	WebElement registerEmail;
 	// Password input text box
-	@FindBy(xpath = "//input[@id='password']")
+	@FindBy(id="password")
 	WebElement registerPassword;
 	// Confirm password text box
-	@FindBy(xpath = "//input[@id='confirmPassword']")
+	@FindBy(id="confirmPassword")
 	WebElement registerConfirmPassword;
 	// Input Register PID text box
-	@FindBy(xpath = "//input[@id='pid']")
+	@FindBy(id="pid")
 	WebElement registerPID;
 	// Register button
 	@FindBy(xpath = "//input[@title='Register']")
@@ -108,6 +109,11 @@ public class RegisterPage {
 		registerButton.click();
 
 	}
+	
+	/*
+	 * Connect to mail using email utilities
+	 * Using smtp gmail services 
+	 */
 
 	public static void connectToEmail() {
 		try {
@@ -122,7 +128,6 @@ public class RegisterPage {
 
 	public String GetEmailContent() {
 		try {
-			// TODO: Execute actions to send verification code to email
 
 			String EmailContent = emailUtils.getAuthorizationCode();
 			return EmailContent;
@@ -150,13 +155,22 @@ public class RegisterPage {
 
 		return containedUrls;
 	}
-
+     
+	/*
+	 * Connect to email to get the message contains URL for activation, then navigate web driver to the link
+	 * 
+	 */
 	public void ActiveEmail() {
 
 		connectToEmail();
+		//Get Email contents, this contains the link for activation
 		String EmailContent = GetEmailContent();
-		List<String> ULRLink = extractUrls(EmailContent);
-		driver.get(ULRLink.get(0));
+		// Get URL link
+		List<String> Link = extractUrls(EmailContent);
+		// Navigate to the link
+		driver.navigate().to(Link.get(0));
+		// Print out info: New account has just been created
+		System.out.println(" Your new account: "+ Constant.EMAIL_NEWLY_CREATE + " has just been created!");
 
 	}
 

@@ -1,4 +1,5 @@
 package testcase;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -18,23 +19,22 @@ public class TestBase {
 	LoginPage loginPage;
 	RegisterPage registerPage;
 	EmailUtils emailUtils;
-	
+
 	@BeforeClass
 	public void beforeClass() {
-		
+
 		System.setProperty("webdriver.chrome.driver", "Driver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(Constant.URLTest);
 		driver.manage().window().maximize();
 	}
-	
 
-//	@AfterClass
-//	public void afterClass() {
-//		driver.quit();
-//	}
-	
+	@AfterClass
+	public void afterClass() {
+		driver.quit();
+	}
+
 	public void connectToEmail() {
 		try {
 			emailUtils = new EmailUtils("hung.ngo.test@gmail.com", "Matkhau~1", "smtp.gmail.com",
@@ -69,6 +69,4 @@ public class TestBase {
 		return null;
 	}
 
-	
-	
 }

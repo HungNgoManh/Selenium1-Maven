@@ -13,6 +13,7 @@ public class Constant {
     public static String EmailContact = "mailto:thanh.viet.le@logigear.com";
     public static String PID = "12345678";
     public static String MessageRegisterSuccess ="Thank you for registering your account";
+    public static String EMAIL_NEWLY_CREATE ="";
     
   
     public static class MessageLoginPage{

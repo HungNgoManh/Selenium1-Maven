@@ -3,12 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Common.EmailTests">
+      <class name="testcase.TC02_TC03_TC05">
         <methods>
-          <include name="connectToEmail"/>
-          <include name="testVerificationCode"/>
+          <include name="beforeClass"/>
+          <include name="TC03"/>
+          <include name="TC05"/>
+          <include name="Initdriver"/>
+          <include name="afterClass"/>
         </methods>
-      </class> <!-- Common.EmailTests -->
+      </class> <!-- testcase.TC02_TC03_TC05 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

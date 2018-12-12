@@ -23,14 +23,22 @@ public class TC07 extends TestBase {
 		/*
 		 * Step 1: Init Login Page driver and start chrome were done in BeforeMethod.
 		 */
+		
 		// Step 2: Click Register Tab
 		registerPage.clickRegisterTab();
+		
 		// Step 3: Enter valid information into all fields (Email, Pass, Confirm pass,
 		// PID) and click Register button
 		registerPage.RegisterNewUser(Utilities.EmailGenerator(), Constant.PASSWORD, Constant.PASSWORD, Constant.PID);
+		
 		// VP: New account is created and message "Thank you for registering your
 		// account" appears.
 		AssertJUnit.assertEquals(Constant.MessageRegisterSuccess, registerPage.GetRegisterSuccessMessage());
+		
+		// Print out new Email created.
+		System.out.println(Constant.EMAIL_NEWLY_CREATE);
+		
+		// Active account
 		 registerPage.ActiveEmail();
 	}	
 	 

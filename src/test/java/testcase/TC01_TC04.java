@@ -19,7 +19,7 @@ public class TC01_TC04 extends TestBase {
 	}
 
 
-	@Test(description = "Test Login success with correct welcome message", priority = 1)
+	@Test(description = "Test Login success with correct welcome message")
 	public void TC01() {
 		/*
 		 * Step 1: Init Login Page driver and start chrome were done in BeforeMethod. 
@@ -35,15 +35,16 @@ public class TC01_TC04 extends TestBase {
 
 	}
 	
-	@Test(description = "Test Contact Email contains correct href value", priority = 3)
+	@Test(description = "Test Contact Email contains correct href value")
 	public void TC04() {
 		/*
 		 * Inherit Step 1 from TC01
 		 * 
 		 */
-		// Step 2: Click Contact Tab
 		
+		// Step 2: Click Contact Tab
 		loginPage.clickContactTab();
+		
 		// VP: Email address's href is "mailto:thanh.viet.le@logigear.com"
 		AssertJUnit.assertEquals(Constant.EmailContact, loginPage.GetEmailContact());
 	}
