@@ -1,6 +1,9 @@
 package Common;
 
-
+/*
+ * 
+ * Define all Constants  ....
+ */
 public class Constant {
 
 	public static String URLTest="http://logigearrailway.somee.com";
