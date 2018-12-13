@@ -115,8 +115,11 @@ public class RegisterPage {
 	 * Using smtp gmail services 
 	 */
 
-	public static void connectToEmail() {
+	public static void connectToEmail()  {
+		
+		
 		try {
+			Thread.sleep(5000);
 			emailUtils = new EmailUtils("hung.ngo.test@gmail.com", "Matkhau~1", "smtp.gmail.com",
 					EmailUtils.EmailFolder.INBOX);
 		} catch (Exception e) {
@@ -169,8 +172,8 @@ public class RegisterPage {
 		List<String> Link = extractUrls(EmailContent);
 		// Navigate to the link
 		driver.navigate().to(Link.get(0));
-		// Print out info: New account has just been created
-		System.out.println(" Your new account: "+ Constant.EMAIL_NEWLY_CREATE + " has just been created!");
+		// Print out info: New account has just been activated
+		System.out.println(" Your new account: "+ Constant.EMAIL_NEWLY_CREATE + " has just been activated!");
 
 	}
 

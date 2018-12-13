@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import Common.Constant;
 import Common.Utilities;
+import pages.HomePage;
 import pages.RegisterPage;
 
 public class TC07 extends TestBase {
@@ -14,6 +15,7 @@ public class TC07 extends TestBase {
 	// Init Register page webdriver before starting
 	public void Initdriver() {
 
+		homePage = new HomePage(driver);
 		registerPage = new RegisterPage(driver);
 	
 	}
@@ -25,7 +27,7 @@ public class TC07 extends TestBase {
 		 */
 		
 		// Step 2: Click Register Tab
-		registerPage.clickRegisterTab();
+		homePage.clickTab(Constant.TAB_REGISTER);
 		
 		// Step 3: Enter valid information into all fields (Email, Pass, Confirm pass,
 		// PID) and click Register button

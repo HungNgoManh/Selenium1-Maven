@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import Common.Constant;
 import Common.Utilities;
+import pages.HomePage;
 import pages.LoginPage;
 
 public class TC02_TC03_TC05 extends TestBase {
@@ -15,6 +16,7 @@ public class TC02_TC03_TC05 extends TestBase {
 	public void Initdriver() {
 
 		loginPage = new LoginPage(driver);
+		homePage = new HomePage(driver);
 	}
 
 	@Test(description = "Test Login with blank user name")
@@ -24,7 +26,7 @@ public class TC02_TC03_TC05 extends TestBase {
 		 */
 
 		// Step 2: Click Login Tab
-		loginPage.clickLoginTab();
+		homePage.clickTab(Constant.TAB_LOGIN);
 
 		// Step 3: Login with blank user name and correct password and click Login
 		loginPage.Login("", Constant.PASSWORD);

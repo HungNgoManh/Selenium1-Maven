@@ -53,15 +53,6 @@ public class LoginPage {
 		return driver.findElement(By.xpath(String.format("//span[normalize-space()='%s']", tabName)));
 	}
 
-	// Click Login Tab
-	public void clickLoginTab() {
-		getTab("Login").click();
-	}
-
-	public void clickContactTab() {
-
-		getTab("Contact").click();
-	}
 
 	// Set user name in textbox
 	public void setUserName(String strUserName) {

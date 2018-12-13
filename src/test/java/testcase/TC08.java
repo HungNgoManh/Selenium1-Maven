@@ -35,7 +35,7 @@ public class TC08 extends TestBase {
 		 * Step 1: Init Login Page driver and start chrome were done in BeforeClass
 		 */
 		// Step 2: Click Login Tab
-		loginPage.clickLoginTab();
+		homePage.clickTab(Constant.TAB_LOGIN);
 		// Step 3: Login with username and password of account hasn't been activated
 		loginPage.Login(email, Constant.PASSWORD);
 		// VP: User can't login and message "Invalid username or password. Please try
