@@ -1,11 +1,13 @@
 package testcase;
 
-import org.testng.AssertJUnit;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import Common.Constant;
 import Common.Utilities;
 import net.bytebuddy.utility.RandomString;
+import pages.HomePage;
 import pages.RegisterPage;
 
 public class TC10 extends TestBase {
@@ -14,6 +16,7 @@ public class TC10 extends TestBase {
 	// Init Register page webdriver before starting
 	public void Initdriver() {
 
+		homePage = new HomePage(driver);
 		registerPage = new RegisterPage(driver);
 	}
 
@@ -23,13 +26,13 @@ public class TC10 extends TestBase {
 		 * Step 1: Init Login Page driver and start chrome were done in BeforeMethod.
 		 */
 		// Step 2: Click Register Tab
-		registerPage.clickRegisterTab();
+		homePage.clickTab(Constant.TAB_REGISTER);
 		// Step 3: Enter valid information into all fields except "Confirm password" is
 		// not the same with "Password"
 		registerPage.RegisterNewUser(Utilities.EmailGenerator(), Constant.PASSWORD, RandomString.make(8), Constant.PID);
 		// VP: Message "There're errors in the form. Please correct the errors and try
 		// again." appears.
-		AssertJUnit.assertEquals(Constant.MessageRegisterPage.MessageFormError, registerPage.GetMessageError());
+		Assert.assertEquals(registerPage.GetMessageError(),Constant.MessageRegisterPage.MessageFormError);
 
 	}
 }

@@ -1,19 +1,16 @@
 package pages;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
 import Common.Constant;
 import Common.EmailUtils;
+import Common.Utilities;
 
 public class RegisterPage {
 
@@ -24,23 +21,20 @@ public class RegisterPage {
 	 */
 	WebDriver driver;
 
-	// Register Tab
-	@FindBy(xpath = "//span[normalize-space()='Register']")
-	WebElement RegisterTab;
 	// Register successful message
 	@FindBy(xpath = "//h1[normalize-space(text())='Thank you for registering your account']")
 	WebElement RegisterSuccessMessage;
 	// Email input text box
-	@FindBy(id="email")
+	@FindBy(id = "email")
 	WebElement registerEmail;
 	// Password input text box
-	@FindBy(id="password")
+	@FindBy(id = "password")
 	WebElement registerPassword;
 	// Confirm password text box
-	@FindBy(id="confirmPassword")
+	@FindBy(id = "confirmPassword")
 	WebElement registerConfirmPassword;
 	// Input Register PID text box
-	@FindBy(id="pid")
+	@FindBy(id = "pid")
 	WebElement registerPID;
 	// Register button
 	@FindBy(xpath = "//input[@title='Register']")
@@ -48,6 +42,12 @@ public class RegisterPage {
 	// Message Error
 	@FindBy(xpath = "//p[@class='message error']")
 	WebElement MessageError;
+	// Password Label
+	@FindBy(xpath = "//label[@class='validation-error' and @for='password']")
+	WebElement passwordlabel;
+	// PID Label
+	@FindBy(xpath = "//label[@class='validation-error' and @for='pid']")
+	WebElement PIDlabel;
 
 	public RegisterPage(WebDriver driver) {
 		this.driver = driver;
@@ -55,10 +55,16 @@ public class RegisterPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	// Click Register tab
-	public void clickRegisterTab() {
+	// Get password Label text
+	public String GetPasswordLabel() {
 
-		RegisterTab.click();
+		return passwordlabel.getText();
+	}
+
+	// Get PID Label text
+	public String GetPIDLabel() {
+
+		return PIDlabel.getText();
 	}
 
 	// Set user name in textbox
@@ -109,71 +115,24 @@ public class RegisterPage {
 		registerButton.click();
 
 	}
+
 	
 	/*
-	 * Connect to mail using email utilities
-	 * Using smtp gmail services 
-	 */
-
-	public static void connectToEmail()  {
-		
-		
-		try {
-			Thread.sleep(5000);
-			emailUtils = new EmailUtils("hung.ngo.test@gmail.com", "Matkhau~1", "smtp.gmail.com",
-					EmailUtils.EmailFolder.INBOX);
-		} catch (Exception e) {
-			e.printStackTrace();
-			Assert.fail(e.getMessage());
-		}
-	}
-	// Get email content that contains the link for activating account
-
-	public String GetEmailContent() {
-		try {
-
-			String EmailContent = emailUtils.getAuthorizationCode();
-			return EmailContent;
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			Assert.fail(e.getMessage());
-		}
-		return null;
-	}
-
-	/**
-	 * Returns a list with all links contained in the input
-	 */
-
-	public List<String> extractUrls(String text) {
-		List<String> containedUrls = new ArrayList<String>();
-		String urlRegex = "((https?|ftp|gopher|telnet|file):((//)|(\\\\))+[\\w\\d:#@%/;$()~_?\\+-=\\\\\\.&]*)";
-		Pattern pattern = Pattern.compile(urlRegex, Pattern.CASE_INSENSITIVE);
-		Matcher urlMatcher = pattern.matcher(text);
-
-		while (urlMatcher.find()) {
-			containedUrls.add(text.substring(urlMatcher.start(0), urlMatcher.end(0)));
-		}
-
-		return containedUrls;
-	}
-     
-	/*
-	 * Connect to email to get the message contains URL for activation, then navigate web driver to the link
+	 * Connect to email to get the message contains URL for activation, then
+	 * navigate web driver to the link
 	 * 
 	 */
 	public void ActiveEmail() {
 
-		connectToEmail();
-		//Get Email contents, this contains the link for activation
-		String EmailContent = GetEmailContent();
+		Utilities.connectToEmail();
+		// Get Email contents, this contains the link for activation
+		String EmailContent = Utilities.GetActivationEmail();
 		// Get URL link
-		List<String> Link = extractUrls(EmailContent);
+		List<String> Link = Utilities.extractUrls(EmailContent);
 		// Navigate to the link
 		driver.navigate().to(Link.get(0));
 		// Print out info: New account has just been activated
-		System.out.println(" Your new account: "+ Constant.EMAIL_NEWLY_CREATE + " has just been activated!");
+		System.out.println(" Your new account: " + Constant.EMAIL_NEWLY_CREATE + " has just been activated!");
 
 	}
 

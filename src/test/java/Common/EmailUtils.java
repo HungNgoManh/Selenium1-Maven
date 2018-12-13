@@ -235,8 +235,8 @@ public class EmailUtils {
    * And the line to get the text from begins with 'Authorization code:'
    * Change these items to whatever you need for your email. This is only an example.
    */
-  public String getAuthorizationCode() throws Exception {
-    Message email = getMessagesBySubject("Please confirm your account", true, 5)[0];
+  public String getAuthorizationCode(String account) throws Exception {
+    Message email = getMessagesBySubject("Please confirm your account "+ account, true, 5)[0];
     BufferedReader reader = new BufferedReader(new InputStreamReader(email.getInputStream()));
 
     String line;
@@ -250,6 +250,26 @@ public class EmailUtils {
     return null;
   }
 
+  /*
+   * For get reset password link
+   * 
+   */
+  public String getResetToken() throws Exception {
+	    Message email = getMessagesBySubject("Please reset your password", true, 5)[0];
+	    BufferedReader reader = new BufferedReader(new InputStreamReader(email.getInputStream()));
+
+	    String line;
+	    String prefix = "Use this password reset token to reset your password";
+
+	    while ((line = reader.readLine()) != null) {
+	      if(line.startsWith(prefix)) {
+	        return line.substring(line.indexOf(":") + 1);
+	      }
+	    }
+	    return null;
+	  }
+
+  
   /**
    * Gets one line of text
    * In this example, the subject of the email is 'Authorization Code'

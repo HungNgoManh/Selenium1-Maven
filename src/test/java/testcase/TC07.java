@@ -1,6 +1,6 @@
 package testcase;
 
-import org.testng.AssertJUnit;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -35,12 +35,15 @@ public class TC07 extends TestBase {
 		
 		// VP: New account is created and message "Thank you for registering your
 		// account" appears.
-		AssertJUnit.assertEquals(Constant.MessageRegisterSuccess, registerPage.GetRegisterSuccessMessage());
+		Assert.assertEquals(registerPage.GetRegisterSuccessMessage(), Constant.MessageRegisterSuccess);
 		
 		// Print out new Email created.
 		System.out.println(Constant.EMAIL_NEWLY_CREATE);
 		
-		// Active account
+		/*
+		 *  Post condition:
+		 *  Active account
+		 */
 		 registerPage.ActiveEmail();
 	}	
 	 

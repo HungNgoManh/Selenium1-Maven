@@ -21,6 +21,7 @@ public class TC09 extends TestBase {
 		registerPage = new RegisterPage(driver);
 		changePassword = new ChangePasswordPage(driver);
 		loginPage = new LoginPage(driver);
+		
 
 	}
 
@@ -66,9 +67,10 @@ public class TC09 extends TestBase {
 		homePage.clickTab(Constant.TAB_LOGOUT);
 		// Click Login Tab again.
 		homePage.clickTab(Constant.TAB_LOGIN);
+		// Login with new account and new password
 		loginPage.Login(Constant.EMAIL_NEWLY_CREATE, Constant.NEW_PASSWORD);
 		// VP: Verify welcome message is correct
-		Assert.assertEquals(loginPage.GetWelcomeText(), Constant.WelcomeText);
+		Assert.assertEquals(loginPage.GetWelcomeText(), Constant.WelcomeMessageLogin);
 
 	}
 

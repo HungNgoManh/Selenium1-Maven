@@ -1,7 +1,6 @@
 package testcase;
 
 import org.testng.Assert;
-import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -33,7 +32,7 @@ public class TC01_TC04 extends TestBase {
 		loginPage.Login(Constant.USERNAME, Constant.PASSWORD);
 		
 		// VP: Verify welcome message is correct
-		Assert.assertEquals(Constant.WelcomeText, loginPage.GetWelcomeText());
+		Assert.assertEquals(Constant.WelcomeMessageLogin, loginPage.GetWelcomeText());
 
 	}
 	
@@ -48,7 +47,7 @@ public class TC01_TC04 extends TestBase {
 		homePage.clickTab(Constant.TAB_CONTACT);
 		
 		// VP: Email address's href is "mailto:thanh.viet.le@logigear.com"
-		AssertJUnit.assertEquals(Constant.EmailContact, loginPage.GetEmailContact());
+		Assert.assertEquals(Constant.EmailContact, loginPage.GetEmailContact());
 	}
 
 	

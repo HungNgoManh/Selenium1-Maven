@@ -1,6 +1,6 @@
 package testcase;
 
-import org.testng.AssertJUnit;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -29,11 +29,11 @@ public class TC02_TC03_TC05 extends TestBase {
 		homePage.clickTab(Constant.TAB_LOGIN);
 
 		// Step 3: Login with blank user name and correct password and click Login
-		loginPage.Login("", Constant.PASSWORD);
+		loginPage.Login(Constant.EMPTY, Constant.PASSWORD);
 
 		// VP: User can't login and message "There was a problem with your login and/or
 		// errors exist in your form. " appears.
-		AssertJUnit.assertEquals(Constant.MessageLoginPage.MessageLoginError, loginPage.GetLoginErrorMessage());
+		Assert.assertEquals(loginPage.GetLoginErrorMessage(),Constant.MessageLoginPage.MessageLoginError);
 
 	}
 
@@ -49,7 +49,7 @@ public class TC02_TC03_TC05 extends TestBase {
 
 		// VP: Error message "There was a problem with your login and/or errors exist in
 		// your form." is displayed
-		AssertJUnit.assertEquals(Constant.MessageLoginPage.MessageLoginError, loginPage.GetLoginErrorMessage());
+		Assert.assertEquals(loginPage.GetLoginErrorMessage(), Constant.MessageLoginPage.MessageLoginError);
 
 	}
 
@@ -67,7 +67,7 @@ public class TC02_TC03_TC05 extends TestBase {
 		// VP: User can't login and message "You have used 4 out of 5 login attempts.
 		// After all 5 have been used, you will be unable to login for 15 minutes."
 		// appears.
-		AssertJUnit.assertEquals(Constant.MessageLoginPage.MessageLoginAttemptError, loginPage.GetLoginErrorMessage());
+		Assert.assertEquals(loginPage.GetLoginErrorMessage(), Constant.MessageLoginPage.MessageLoginAttemptError);
 
 	}
 
