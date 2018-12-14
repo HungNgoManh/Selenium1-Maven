@@ -7,17 +7,18 @@ import org.testng.annotations.Test;
 import Common.Constant;
 import pages.HomePage;
 import pages.LoginPage;
-import pages.MyTicketPage;
 
 public class TC06 extends TestBase {
 
+	private LoginPage loginPage;
+	private HomePage homePage;
+	
 	@BeforeMethod
 	// Init Login page webdriver before starting
 	public void Initdriver() {
 
 		loginPage = new LoginPage(driver);
 		homePage = new HomePage(driver);
-		myTicketPage = new MyTicketPage(driver);
 	}
 
 	@Test(description = "Check if Additional pages display once user logged in")
@@ -41,7 +42,8 @@ public class TC06 extends TestBase {
 		homePage.clickTab(Constant.TAB_MY_TICKET);
 
 		// VP: User will be directed to My ticket page
-		Assert.assertEquals(homePage.getPageHeader(Constant.TAB_MY_TICKET), Constant.MessageMyTicketPage.PageHeaderText);
+		Assert.assertEquals(homePage.getPageHeader(Constant.TAB_MY_TICKET),
+				Constant.MessageMyTicketPage.PageHeaderText);
 
 		// Step 5: Click Change password tab
 		homePage.clickTab(Constant.TAB_CHANGE_PASSWORD);

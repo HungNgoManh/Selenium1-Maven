@@ -12,6 +12,10 @@ import pages.RegisterPage;
 
 public class TC12 extends TestBase {
 
+	private RegisterPage registerPage;
+	private HomePage homePage;
+	private LoginPage loginPage;
+
 	@BeforeMethod
 	// Init Register page webdriver before starting
 	public void Initdriver() {
@@ -65,8 +69,9 @@ public class TC12 extends TestBase {
 		// Visit the forgot password page to generate a new one." displays above the
 		// form.
 		Assert.assertEquals(loginPage.GetLoginErrorMessage(), Constant.MessageLoginPage.MessageResetTokenIncorrect);
-		
-		//VP: Error message "The password reset token is invalid." displays next to the "Password Reset Token" field.
+
+		// VP: Error message "The password reset token is invalid." displays next to the
+		// "Password Reset Token" field.
 		Assert.assertEquals(loginPage.getResetTokenLabel(), Constant.MessageLoginPage.MessagePasswordTokenInvalid);
 
 	}

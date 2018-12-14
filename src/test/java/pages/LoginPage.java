@@ -133,7 +133,9 @@ public class LoginPage {
 
 	// Click button Send Instruction
 	public void clickbtnSendInstruction() {
-
+		
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		btnSendInstruction.click();
 	}
 	
@@ -214,10 +216,11 @@ public class LoginPage {
 		this.confirmPassword.clear();
 		this.newPassword.sendKeys(newpass);
 		this.confirmPassword.sendKeys(confirmpass);
-		this.resetToken.sendKeys((Keys.chord(Keys.CONTROL, "a")),Keys.DELETE);
-		this.newPassword.click();
+		this.resetToken.sendKeys((Keys.chord(Keys.CONTROL, "a")),resettoken);
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		this.btnResetPassword.click();
-		
+				
 		
 	}
 

@@ -10,6 +10,10 @@ import pages.HomePage;
 import pages.RegisterPage;
 
 public class TC11 extends TestBase {
+	
+	private RegisterPage registerPage;
+	private HomePage homePage;
+
 
 	@BeforeMethod
 	// Init Register page webdriver before starting

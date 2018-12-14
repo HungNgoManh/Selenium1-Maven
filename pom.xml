@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>HungNgo-8166</groupId>
-  <artifactId>Test</artifactId>
+  <artifactId>Selenium1-Maven</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -27,32 +27,26 @@
 <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
-    <version>6.14.3</version>
+    <version>6.9.10</version>
     <scope>test</scope>
 </dependency>
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>javax.mail-api</artifactId>
-			<version>1.5.5</version>
+			<version>1.5.6</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.sun.mail</groupId>
 			<artifactId>smtp</artifactId>
-			<version>1.6.0</version>
+			<version>1.6.1</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.sun.mail</groupId>
 			<artifactId>javax.mail</artifactId>
-			<version>1.6.0</version>
+			<version>1.6.1</version>
 		</dependency>
   
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+    </dependencies>
   </project>

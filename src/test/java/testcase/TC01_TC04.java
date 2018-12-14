@@ -11,6 +11,9 @@ import pages.LoginPage;
 
 public class TC01_TC04 extends TestBase {
 	
+	private LoginPage loginPage;
+	private HomePage homePage;
+
 	@BeforeMethod
 	// Init Login page webdriver before starting
 	public void Initdriver() {
@@ -32,7 +35,7 @@ public class TC01_TC04 extends TestBase {
 		loginPage.Login(Constant.USERNAME, Constant.PASSWORD);
 		
 		// VP: Verify welcome message is correct
-		Assert.assertEquals(Constant.WelcomeMessageLogin, loginPage.GetWelcomeText());
+		Assert.assertEquals(loginPage.GetWelcomeText(),Constant.WelcomeMessageLogin);
 
 	}
 	

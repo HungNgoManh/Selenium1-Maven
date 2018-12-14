@@ -1,34 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" ignored="0" total="9" passed="7">
+<testng-results skipped="0" failed="2" ignored="0" total="3" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="63635" started-at="2018-12-12T09:08:59Z" finished-at="2018-12-12T09:10:03Z">
+  <suite name="Default suite" duration-ms="16579" started-at="2018-12-14T06:40:11Z" finished-at="2018-12-14T06:40:27Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="63635" started-at="2018-12-12T09:08:59Z" finished-at="2018-12-12T09:10:03Z">
+    <test name="Default test" duration-ms="16579" started-at="2018-12-14T06:40:11Z" finished-at="2018-12-14T06:40:27Z">
       <class name="testcase.TC02_TC03_TC05">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:testcase.TC02_TC03_TC05@77caeb3e]" name="beforeClass" is-config="true" duration-ms="6789" started-at="2018-12-12T09:09:17Z" finished-at="2018-12-12T09:09:24Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:testcase.TC02_TC03_TC05@5b275dab]" name="beforeClass" is-config="true" duration-ms="9823" started-at="2018-12-14T06:40:11Z" finished-at="2018-12-14T06:40:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="Initdriver()[pri:0, instance:testcase.TC02_TC03_TC05@77caeb3e]" name="Initdriver" is-config="true" duration-ms="0" started-at="2018-12-12T09:09:24Z" finished-at="2018-12-12T09:09:24Z">
+        <test-method status="PASS" signature="Initdriver()[pri:0, instance:testcase.TC02_TC03_TC05@5b275dab]" name="Initdriver" is-config="true" duration-ms="45" started-at="2018-12-14T06:40:20Z" finished-at="2018-12-14T06:40:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Initdriver -->
-        <test-method status="PASS" signature="TC02()[pri:0, instance:testcase.TC02_TC03_TC05@77caeb3e]" name="TC02" duration-ms="1507" started-at="2018-12-12T09:09:24Z" description="Test Login with blank user name" finished-at="2018-12-12T09:09:25Z">
+        <test-method status="PASS" signature="TC02()[pri:0, instance:testcase.TC02_TC03_TC05@5b275dab]" name="TC02" duration-ms="1541" started-at="2018-12-14T06:40:20Z" description="Test Login with blank user name" finished-at="2018-12-14T06:40:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC02 -->
-        <test-method status="FAIL" signature="TC03()[pri:0, instance:testcase.TC02_TC03_TC05@77caeb3e]" name="TC03" duration-ms="924" started-at="2018-12-12T09:09:25Z" description="Test Login with invalid password" finished-at="2018-12-12T09:09:26Z">
+        <test-method status="PASS" signature="Initdriver()[pri:0, instance:testcase.TC02_TC03_TC05@5b275dab]" name="Initdriver" is-config="true" duration-ms="5" started-at="2018-12-14T06:40:22Z" finished-at="2018-12-14T06:40:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Initdriver -->
+        <test-method status="FAIL" signature="TC03()[pri:0, instance:testcase.TC02_TC03_TC05@5b275dab]" name="TC03" duration-ms="1000" started-at="2018-12-14T06:40:22Z" description="Test Login with invalid password" finished-at="2018-12-14T06:40:23Z">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected:<There was a problem with your login and/or errors exist in your form.> but was:<Invalid username or password. Please try again.>]]>
+              <![CDATA[expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected:<There was a problem with your login and/or errors exist in your form.> but was:<Invalid username or password. Please try again.>
-at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:101)
-at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:108)
-at testcase.TC02_TC03_TC05.TC03(TC02_TC03_TC05.java:50)
+              <![CDATA[java.lang.AssertionError: expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:453)
+at org.testng.Assert.assertEquals(Assert.java:463)
+at testcase.TC02_TC03_TC05.TC03(TC02_TC03_TC05.java:55)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -60,24 +68,24 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC03 -->
-        <test-method status="PASS" signature="Initdriver()[pri:0, instance:testcase.TC02_TC03_TC05@77caeb3e]" name="Initdriver" is-config="true" duration-ms="0" started-at="2018-12-12T09:09:25Z" finished-at="2018-12-12T09:09:25Z">
+        <test-method status="PASS" signature="Initdriver()[pri:0, instance:testcase.TC02_TC03_TC05@5b275dab]" name="Initdriver" is-config="true" duration-ms="3" started-at="2018-12-14T06:40:23Z" finished-at="2018-12-14T06:40:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Initdriver -->
-        <test-method status="PASS" signature="Initdriver()[pri:0, instance:testcase.TC02_TC03_TC05@77caeb3e]" name="Initdriver" is-config="true" duration-ms="1" started-at="2018-12-12T09:09:26Z" finished-at="2018-12-12T09:09:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Initdriver -->
-        <test-method status="FAIL" signature="TC05()[pri:0, instance:testcase.TC02_TC03_TC05@77caeb3e]" name="TC05" duration-ms="3478" started-at="2018-12-12T09:09:26Z" description="Check Login attempts error - more than 3 times" finished-at="2018-12-12T09:09:30Z">
+        <test-method status="FAIL" signature="TC05()[pri:0, instance:testcase.TC02_TC03_TC05@5b275dab]" name="TC05" duration-ms="3543" started-at="2018-12-14T06:40:23Z" description="Check Login attempts error - more than 3 times" finished-at="2018-12-14T06:40:27Z">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected:<You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.> but was:<Invalid username or password. Please try again.>]]>
+              <![CDATA[expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected:<You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.> but was:<Invalid username or password. Please try again.>
-at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:101)
-at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:108)
-at testcase.TC02_TC03_TC05.TC05(TC02_TC03_TC05.java:68)
+              <![CDATA[java.lang.AssertionError: expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:453)
+at org.testng.Assert.assertEquals(Assert.java:463)
+at testcase.TC02_TC03_TC05.TC05(TC02_TC03_TC05.java:73)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -109,113 +117,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC05 -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:testcase.TC02_TC03_TC05@77caeb3e]" name="afterClass" is-config="true" duration-ms="572" started-at="2018-12-12T09:09:30Z" finished-at="2018-12-12T09:09:30Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:testcase.TC02_TC03_TC05@5b275dab]" name="afterClass" is-config="true" duration-ms="591" started-at="2018-12-14T06:40:27Z" finished-at="2018-12-14T06:40:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
       </class> <!-- testcase.TC02_TC03_TC05 -->
-      <class name="testcase.TC01_TC04">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:testcase.TC01_TC04@66a3ffec]" name="beforeClass" is-config="true" duration-ms="5964" started-at="2018-12-12T09:08:59Z" finished-at="2018-12-12T09:09:05Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="Initdriver()[pri:0, instance:testcase.TC01_TC04@66a3ffec]" name="Initdriver" is-config="true" duration-ms="22" started-at="2018-12-12T09:09:05Z" finished-at="2018-12-12T09:09:05Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Initdriver -->
-        <test-method status="PASS" signature="TC01()[pri:0, instance:testcase.TC01_TC04@66a3ffec]" name="TC01" duration-ms="2271" started-at="2018-12-12T09:09:05Z" description="Test Login success with correct welcome message" finished-at="2018-12-12T09:09:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC01 -->
-        <test-method status="PASS" signature="Initdriver()[pri:0, instance:testcase.TC01_TC04@66a3ffec]" name="Initdriver" is-config="true" duration-ms="2" started-at="2018-12-12T09:09:08Z" finished-at="2018-12-12T09:09:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Initdriver -->
-        <test-method status="PASS" signature="TC04()[pri:0, instance:testcase.TC01_TC04@66a3ffec]" name="TC04" duration-ms="805" started-at="2018-12-12T09:09:08Z" description="Test Contact Email contains correct href value" finished-at="2018-12-12T09:09:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC04 -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:testcase.TC01_TC04@66a3ffec]" name="afterClass" is-config="true" duration-ms="558" started-at="2018-12-12T09:09:08Z" finished-at="2018-12-12T09:09:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- testcase.TC01_TC04 -->
-      <class name="testcase.TC08">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:testcase.TC08@1e88b3c]" name="beforeClass" is-config="true" duration-ms="5416" started-at="2018-12-12T09:09:38Z" finished-at="2018-12-12T09:09:43Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="Initdriver()[pri:0, instance:testcase.TC08@1e88b3c]" name="Initdriver" is-config="true" duration-ms="2" started-at="2018-12-12T09:09:43Z" finished-at="2018-12-12T09:09:43Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Initdriver -->
-        <test-method status="PASS" signature="CreateAccount()[pri:0, instance:testcase.TC08@1e88b3c]" name="CreateAccount" is-config="true" duration-ms="2445" started-at="2018-12-12T09:09:43Z" finished-at="2018-12-12T09:09:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CreateAccount -->
-        <test-method status="PASS" signature="TC_08()[pri:0, instance:testcase.TC08@1e88b3c]" name="TC_08" duration-ms="1640" started-at="2018-12-12T09:09:46Z" description="User can&#039;t login with an account hasn&#039;t been activated" finished-at="2018-12-12T09:09:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_08 -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:testcase.TC08@1e88b3c]" name="afterClass" is-config="true" duration-ms="572" started-at="2018-12-12T09:09:48Z" finished-at="2018-12-12T09:09:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- testcase.TC08 -->
-      <class name="testcase.TC07">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:testcase.TC07@42d80b78]" name="beforeClass" is-config="true" duration-ms="5384" started-at="2018-12-12T09:09:48Z" finished-at="2018-12-12T09:09:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="Initdriver()[pri:0, instance:testcase.TC07@42d80b78]" name="Initdriver" is-config="true" duration-ms="0" started-at="2018-12-12T09:09:53Z" finished-at="2018-12-12T09:09:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Initdriver -->
-        <test-method status="PASS" signature="TC_07()[pri:0, instance:testcase.TC07@42d80b78]" name="TC_07" duration-ms="8835" started-at="2018-12-12T09:09:53Z" description="Check if user can create new account" finished-at="2018-12-12T09:10:02Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_07 -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:testcase.TC07@42d80b78]" name="afterClass" is-config="true" duration-ms="639" started-at="2018-12-12T09:10:02Z" finished-at="2018-12-12T09:10:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- testcase.TC07 -->
-      <class name="testcase.TC06">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:testcase.TC06@3bfdc050]" name="beforeClass" is-config="true" duration-ms="5332" started-at="2018-12-12T09:09:09Z" finished-at="2018-12-12T09:09:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="Initdriver()[pri:0, instance:testcase.TC06@3bfdc050]" name="Initdriver" is-config="true" duration-ms="1" started-at="2018-12-12T09:09:14Z" finished-at="2018-12-12T09:09:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Initdriver -->
-        <test-method status="PASS" signature="TC_06()[pri:0, instance:testcase.TC06@3bfdc050]" name="TC_06" duration-ms="2262" started-at="2018-12-12T09:09:14Z" description="Check if Additional pages display once user logged in" finished-at="2018-12-12T09:09:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_06 -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:testcase.TC06@3bfdc050]" name="afterClass" is-config="true" duration-ms="562" started-at="2018-12-12T09:09:17Z" finished-at="2018-12-12T09:09:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- testcase.TC06 -->
-      <class name="testcase.TC10">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:testcase.TC10@1bce4f0a]" name="beforeClass" is-config="true" duration-ms="5279" started-at="2018-12-12T09:09:30Z" finished-at="2018-12-12T09:09:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="Initdriver()[pri:0, instance:testcase.TC10@1bce4f0a]" name="Initdriver" is-config="true" duration-ms="3" started-at="2018-12-12T09:09:36Z" finished-at="2018-12-12T09:09:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Initdriver -->
-        <test-method status="PASS" signature="TC_10()[pri:0, instance:testcase.TC10@1bce4f0a]" name="TC_10" duration-ms="1769" started-at="2018-12-12T09:09:36Z" description="User can&#039;t create account with &quot;Confirm password&quot; is not the same with &quot;Password&quot;" finished-at="2018-12-12T09:09:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_10 -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:testcase.TC10@1bce4f0a]" name="afterClass" is-config="true" duration-ms="564" started-at="2018-12-12T09:09:37Z" finished-at="2018-12-12T09:09:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- testcase.TC10 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

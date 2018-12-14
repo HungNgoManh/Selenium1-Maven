@@ -11,6 +11,9 @@ import pages.LoginPage;
 
 public class TC02_TC03_TC05 extends TestBase {
 
+	private LoginPage loginPage;
+	private HomePage homePage;
+	
 	@BeforeMethod
 	// Init Login page webdriver before starting
 	public void Initdriver() {

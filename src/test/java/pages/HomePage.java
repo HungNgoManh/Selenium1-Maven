@@ -12,7 +12,7 @@ public class HomePage {
 	 */
 	WebDriver driver;
 
-	public HomePage(WebDriver driver) {
+	public HomePage (WebDriver driver) {
 		this.driver = driver;
 		// This initElements method will create all WebElements
 		PageFactory.initElements(driver, this);

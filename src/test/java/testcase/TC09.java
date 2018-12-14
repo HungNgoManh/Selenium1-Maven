@@ -13,6 +13,11 @@ import pages.RegisterPage;
 
 public class TC09 extends TestBase {
 
+	private HomePage homePage;
+	private RegisterPage registerPage;
+	private LoginPage loginPage;
+	private ChangePasswordPage changePassword;
+
 	@BeforeMethod
 	// Init Register page webdriver before starting
 	public void Initdriver() {
@@ -21,7 +26,6 @@ public class TC09 extends TestBase {
 		registerPage = new RegisterPage(driver);
 		changePassword = new ChangePasswordPage(driver);
 		loginPage = new LoginPage(driver);
-		
 
 	}
 
@@ -38,7 +42,7 @@ public class TC09 extends TestBase {
 		registerPage.RegisterNewUser(Utilities.EmailGenerator(), Constant.PASSWORD, Constant.PASSWORD, Constant.PID);
 
 		// Print out new Email created.
-		System.out.println("Account created: "+ Constant.EMAIL_NEWLY_CREATE);
+		System.out.println("Account created: " + Constant.EMAIL_NEWLY_CREATE);
 
 		// Active account
 		registerPage.ActiveEmail();
@@ -58,7 +62,7 @@ public class TC09 extends TestBase {
 		// VP: Message "Your password has been updated" appears.
 		Assert.assertEquals(Constant.MessageChangePasswordPage.MessageChangePasswordSuccess,
 				changePassword.GetMessageChangePasswordSuccess());
-		
+
 		/*
 		 * 
 		 * Post condition: Login with new password
