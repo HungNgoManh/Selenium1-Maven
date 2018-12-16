@@ -12,13 +12,20 @@ import org.openqa.selenium.support.PageFactory;
 
 import Common.Constant;
 import Common.Utilities;
+import testcase.TestBase;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
+	
+	//*********Constructor*********
+    public LoginPage(WebDriver driver) {
+        super(driver);
+    }
+    
+    
 	/**
 	 * All WebElements are identified by @FindBy annotation
 	 */
-	WebDriver driver;
-
+	
 	@FindBy(id = "username")
 	WebElement UID;
 
@@ -62,9 +69,6 @@ public class LoginPage {
 	@FindBy(xpath = "//div[@id='page']/div//li/parent::ul/preceding::div/following::div/h1[text()='Book ticket']")
 	WebElement BookTicketPageTitle;
 
-	@FindBy(xpath = "//a[contains(@href,'mailto')]")
-	WebElement EmailContact;
-
 	@FindBy(xpath = "//a[@href='/Account/ForgotPassword.cshtml']")
 	WebElement ForgotPasswordLink;
 
@@ -74,11 +78,18 @@ public class LoginPage {
 	@FindBy(xpath = "//input[@value='Send Instructions']")
 	WebElement btnSendInstruction;
 
-	public LoginPage(WebDriver driver) {
-		this.driver = driver;
-		// This initElements method will create all WebElements
-		PageFactory.initElements(driver, this);
-	}
+	//*********Page Methods*********
+    public void loginToRailway (String strUserName, String strPasword){
+        //Enter Username(Email)
+        writeText(UID,strUserName);
+        //Enter Password
+        writeText(password, strPasword);
+        //Click Login Button
+        click(btnLogin);
+        // Update Welcome message for logged user
+        Constant.WelcomeMessageLogin = Constant.WELCOME + strUserName;
+    }
+    
 
 	public WebElement getTab(String tabName) {
 		return driver.findElement(By.xpath(String.format("//span[normalize-space()='%s']", tabName)));
@@ -157,18 +168,7 @@ public class LoginPage {
 		return WelcomeText.getText();
 	}
 
-	public void Login(String strUserName, String strPasword) {
-		// Fill user name
-		this.setUserName(strUserName);
-		// Fill password
-		this.setPassword(strPasword);
-		// Click Login button
-		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		this.clickLoginButton();
-		Constant.WelcomeMessageLogin = Constant.WELCOME + strUserName;
-	}
-
+	
 	public String GetLoginErrorMessage() {
 
 		return LoginPageErrorMessage.getText();
@@ -181,12 +181,7 @@ public class LoginPage {
 		password.clear();
 	}
 
-	public String GetEmailContact() {
-
-		return EmailContact.getAttribute("href");
-
-	}
-
+	
 	// Login multi time with give username, password
 	public void LoginMultiTime(String strUserName, String strPasword, int time) {
 

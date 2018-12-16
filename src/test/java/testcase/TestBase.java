@@ -1,31 +1,35 @@
 package testcase;
-
-import java.util.concurrent.TimeUnit;
-
+ 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-
-import Common.Constant;
-
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import pages.PageGenerator;
+ 
 public class TestBase {
-
-	WebDriver driver;
-
-	@BeforeClass
-	public void beforeClass() {
-
-		System.setProperty("webdriver.chrome.driver", "Driver\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get(Constant.URLTest);
-		driver.manage().window().maximize();
-	}
-
-	@AfterClass
-	public void afterClass() {
-		driver.quit();
-	}
-
+    public WebDriver driver;
+    public WebDriverWait wait;
+    public PageGenerator page;
+ 
+    @BeforeMethod
+    public void setup () {
+        //Create a Chrome driver. All test classes use this.
+    	System.setProperty("webdriver.chrome.driver", "Driver\\chromedriver.exe");
+        driver = new ChromeDriver();
+ 
+        //Create a wait. All test classes use this.
+        wait = new WebDriverWait(driver,15);
+ 
+        //Maximize Window
+        driver.manage().window().maximize();
+ 
+        //Instantiate the Page Class
+        page = new PageGenerator(driver);
+    }
+ 
+    @AfterMethod
+    public void teardown () {
+        driver.quit();
+    }
 }
