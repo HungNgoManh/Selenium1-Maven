@@ -15,17 +15,16 @@ import Common.Utilities;
 import testcase.TestBase;
 
 public class LoginPage extends BasePage {
-	
-	//*********Constructor*********
-    public LoginPage(WebDriver driver) {
-        super(driver);
-    }
-    
-    
+
+	// *********Constructor*********
+	public LoginPage(WebDriver driver) {
+		super(driver);
+	}
+
 	/**
 	 * All WebElements are identified by @FindBy annotation
 	 */
-	
+
 	@FindBy(id = "username")
 	WebElement UID;
 
@@ -37,11 +36,11 @@ public class LoginPage extends BasePage {
 
 	@FindBy(id = "confirmPassword")
 	WebElement confirmPassword;
-	
-	@FindBy(xpath="//input[@id='resetToken']")
+
+	@FindBy(xpath = "//input[@id='resetToken']")
 	WebElement resetToken;
-	
-	@FindBy (xpath="//input[@title='Reset password']")
+
+	@FindBy(xpath = "//input[@title='Reset password']")
 	WebElement btnResetPassword;
 
 	@FindBy(xpath = "//div[@class='account']//strong")
@@ -55,10 +54,10 @@ public class LoginPage extends BasePage {
 
 	@FindBy(xpath = "//body/child::div/div[@id='content']/p[starts-with(@class,'message')]")
 	WebElement LoginPageErrorMessage;
-	
+
 	@FindBy(xpath = "//label[@class='validation-error' and @for='resetToken']")
 	WebElement resetTokenlabel;
-	
+
 	// For test xpath training ^^
 	@FindBy(xpath = "//body/child::div/div[@id='content']/p[normalize-space(@text())='']")
 	WebElement LoginErrorMessage2;
@@ -78,18 +77,17 @@ public class LoginPage extends BasePage {
 	@FindBy(xpath = "//input[@value='Send Instructions']")
 	WebElement btnSendInstruction;
 
-	//*********Page Methods*********
-    public void loginToRailway (String strUserName, String strPasword){
-        //Enter Username(Email)
-        writeText(UID,strUserName);
-        //Enter Password
-        writeText(password, strPasword);
-        //Click Login Button
-        click(btnLogin);
-        // Update Welcome message for logged user
-        Constant.WelcomeMessageLogin = Constant.WELCOME + strUserName;
-    }
-    
+	// *********Page Methods*********
+	public void loginToRailway(String strUserName, String strPasword) {
+		// Enter Username(Email)
+		writeText(UID, strUserName);
+		// Enter Password
+		writeText(password, strPasword);
+		// Click Login Button
+		click(btnLogin);
+		// Update Welcome message for logged user
+		Constant.WelcomeMessageLogin = Constant.WELCOME + strUserName;
+	}
 
 	public WebElement getTab(String tabName) {
 		return driver.findElement(By.xpath(String.format("//span[normalize-space()='%s']", tabName)));
@@ -99,7 +97,7 @@ public class LoginPage extends BasePage {
 
 		return driver.findElement(By.xpath("//legend[contains(text(),'Password Change Form')]"));
 	}
-	
+
 	public WebElement ResetTokenTextBox() {
 
 		return driver.findElement(By.id("resetToken"));
@@ -144,21 +142,21 @@ public class LoginPage extends BasePage {
 
 	// Click button Send Instruction
 	public void clickbtnSendInstruction() {
-		
+
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		btnSendInstruction.click();
 	}
-	
-	// Get reset token Label text
-		public String getResetTokenLabel() {
 
-			return resetTokenlabel.getText();
-		}
-	
+	// Get reset token Label text
+	public String getResetTokenLabel() {
+
+		return resetTokenlabel.getText();
+	}
+
 	// Click reset password button
 	public void clickbtnResetPassword() {
-		
+
 		btnResetPassword.click();
 	}
 
@@ -168,7 +166,6 @@ public class LoginPage extends BasePage {
 		return WelcomeText.getText();
 	}
 
-	
 	public String GetLoginErrorMessage() {
 
 		return LoginPageErrorMessage.getText();
@@ -181,13 +178,13 @@ public class LoginPage extends BasePage {
 		password.clear();
 	}
 
-	
 	// Login multi time with give username, password
 	public void LoginMultiTime(String strUserName, String strPasword, int time) {
 
-		ClearTextBox();
 		for (int i = 1; i <= time; i++) {
-			Login(strUserName, strPasword);
+			ClearTextBox();
+			loginToRailway(strUserName, strPasword);
+
 		}
 	}
 
@@ -204,19 +201,18 @@ public class LoginPage extends BasePage {
 		driver.navigate().to(Link.get(0));
 
 	}
-	
+
 	public void resetPassword(String newpass, String confirmpass, String resettoken) {
-		
+
 		this.newPassword.clear();
 		this.confirmPassword.clear();
 		this.newPassword.sendKeys(newpass);
 		this.confirmPassword.sendKeys(confirmpass);
-		this.resetToken.sendKeys((Keys.chord(Keys.CONTROL, "a")),resettoken);
+		this.resetToken.sendKeys((Keys.chord(Keys.CONTROL, "a")), resettoken);
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		this.btnResetPassword.click();
-				
-		
+
 	}
 
 }
