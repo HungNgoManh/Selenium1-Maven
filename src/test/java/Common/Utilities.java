@@ -40,7 +40,7 @@ public class Utilities extends TestBase {
 
 		try {
 			Thread.sleep(5000);
-			emailUtils = new EmailUtils("hung.ngo.test@gmail.com", "Matkhau~1", "smtp.gmail.com",
+			emailUtils = new EmailUtils(Constant.USERNAME, Constant.PASSWORD, Constant.gmail_service,
 					EmailUtils.EmailFolder.INBOX);
 		} catch (Exception e) {
 			e.printStackTrace();

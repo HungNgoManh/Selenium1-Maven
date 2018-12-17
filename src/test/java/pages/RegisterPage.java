@@ -12,15 +12,18 @@ import Common.Constant;
 import Common.EmailUtils;
 import Common.Utilities;
 
-public class RegisterPage {
+public class RegisterPage extends BasePage {
 
 	static EmailUtils emailUtils;
+	
+	// *********Constructor*********
+		public RegisterPage (WebDriver driver) {
+			super(driver);
+		}
 
 	/**
 	 * All WebElements are identified by @FindBy annotation
 	 */
-	WebDriver driver;
-
 	// Register successful message
 	@FindBy(xpath = "//h1[normalize-space(text())='Thank you for registering your account']")
 	WebElement RegisterSuccessMessage;
@@ -39,9 +42,9 @@ public class RegisterPage {
 	// Register button
 	@FindBy(xpath = "//input[@title='Register']")
 	WebElement registerButton;
-	// Message Error
-	@FindBy(xpath = "//p[@class='message error']")
-	WebElement MessageError;
+	// Message after register an account
+	@FindBy(xpath = "//p[starts-with(@class,'message')]")
+	WebElement RegisterMessages;
 	// Password Label
 	@FindBy(xpath = "//label[@class='validation-error' and @for='password']")
 	WebElement passwordlabel;
@@ -49,12 +52,7 @@ public class RegisterPage {
 	@FindBy(xpath = "//label[@class='validation-error' and @for='pid']")
 	WebElement PIDlabel;
 
-	public RegisterPage(WebDriver driver) {
-		this.driver = driver;
-		// This initElements method will create all WebElements
-		PageFactory.initElements(driver, this);
-	}
-
+	
 	// Get password Label text
 	public String GetPasswordLabel() {
 
@@ -97,9 +95,9 @@ public class RegisterPage {
 
 	}
 
-	public String GetMessageError() {
+	public String GetMessageAfterRegisterAccount() {
 
-		return MessageError.getText();
+		return RegisterMessages.getText();
 	}
 
 	// Fill all info and click Register button
@@ -109,9 +107,8 @@ public class RegisterPage {
 		this.setPassword(strPassword);
 		this.setPasswordConfirm(strPassword2);
 		this.setPID(PID);
-		// scroll to the bottom page to be able to click Register button
-		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", registerButton);
 		registerButton.click();
 
 	}

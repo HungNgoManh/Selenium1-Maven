@@ -53,10 +53,13 @@ public class LoginPage extends BasePage {
 	WebElement PageFooter;
 
 	@FindBy(xpath = "//body/child::div/div[@id='content']/p[starts-with(@class,'message')]")
-	WebElement LoginPageErrorMessage;
+	WebElement MessageLoginForm;
 
 	@FindBy(xpath = "//label[@class='validation-error' and @for='resetToken']")
 	WebElement resetTokenlabel;
+	
+	@FindBy(xpath="//label[@class='validation-error' and @for ='confirmPassword']")
+	WebElement lblConfirmPassword;
 
 	// For test xpath training ^^
 	@FindBy(xpath = "//body/child::div/div[@id='content']/p[normalize-space(@text())='']")
@@ -83,6 +86,8 @@ public class LoginPage extends BasePage {
 		writeText(UID, strUserName);
 		// Enter Password
 		writeText(password, strPasword);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", btnLogin);
 		// Click Login Button
 		click(btnLogin);
 		// Update Welcome message for logged user
@@ -143,8 +148,8 @@ public class LoginPage extends BasePage {
 	// Click button Send Instruction
 	public void clickbtnSendInstruction() {
 
-		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", btnSendInstruction);
 		btnSendInstruction.click();
 	}
 
@@ -153,6 +158,13 @@ public class LoginPage extends BasePage {
 
 		return resetTokenlabel.getText();
 	}
+	
+	//Get Confirm password label
+	
+	public String getConfirmPasswordLabel() {
+		
+		return lblConfirmPassword.getText();
+	}
 
 	// Click reset password button
 	public void clickbtnResetPassword() {
@@ -160,15 +172,16 @@ public class LoginPage extends BasePage {
 		btnResetPassword.click();
 	}
 
+	
 	// Get Welcome user message
 	public String GetWelcomeText() {
 
 		return WelcomeText.getText();
 	}
 
-	public String GetLoginErrorMessage() {
+	public String GetMessageInform() {
 
-		return LoginPageErrorMessage.getText();
+		return MessageLoginForm.getText();
 
 	}
 
@@ -209,8 +222,10 @@ public class LoginPage extends BasePage {
 		this.newPassword.sendKeys(newpass);
 		this.confirmPassword.sendKeys(confirmpass);
 		this.resetToken.sendKeys((Keys.chord(Keys.CONTROL, "a")), resettoken);
-		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		// Scroll to Reset password button
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", btnResetPassword);
+		
 		this.btnResetPassword.click();
 
 	}

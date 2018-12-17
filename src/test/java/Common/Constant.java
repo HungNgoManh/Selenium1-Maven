@@ -8,7 +8,7 @@ public class Constant {
 
 	public static String URLTest = "http://logigearrailway.somee.com";
 	public static String USERNAME = "hung.ngo.test@gmail.com";
-	public static String PASSWORD = "12345678";
+	public static String PASSWORD = "Matkhau~1";
 	public static String NEW_PASSWORD = "87654321";
 	public static String WELCOME = "Welcome ";
 	public static String EmailContact = "mailto:thanh.viet.le@logigear.com";
@@ -17,6 +17,7 @@ public class Constant {
 	public static String EMAIL_NEWLY_CREATE = "";
 	public static String WelcomeMessageLogin = "";
 	public static String EMPTY = "";
+	public static String gmail_service= "smtp.gmail.com";
 
 	public static String TAB_LOGOUT = "Log out";
 	public static String TAB_LOGIN = "Login";
@@ -55,6 +56,8 @@ public class Constant {
 
 		public static String PageHeaderText = "Change password";
 		public static String MessageChangePasswordSuccess = "Your password has been updated!";
+		public static String MessagePasswordDidNotMatch ="The password confirmation did not match the new password.";
+		public static String MessageCouldNotResetPassword ="Could not reset password. Please correct the errors and try again.";
 
 	}
 
