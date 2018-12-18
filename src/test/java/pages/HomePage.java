@@ -84,6 +84,17 @@ public class HomePage extends BasePage {
 		return PageFactory.initElements(driver, ChangePasswordPage.class);
 	}
 
+	// Go to Book Ticket Page
+	public BookTicketPage goToBookTicketPage() {
+
+		click(bookTicketTab);
+
+		new PageFactory();
+		return PageFactory.initElements(driver, BookTicketPage.class);
+	}
+
+	
+	// Get Tab to check if Tab is displayed??
 	public WebElement getTab(String tabName) {
 		return driver.findElement(By.xpath(String.format("//span[normalize-space()='%s']", tabName)));
 	}

@@ -26,6 +26,25 @@ public class Constant {
 	public static String TAB_CONTACT = "Contact";
 	public static String TAB_REGISTER = "Register";
 
+	public enum ListBookTicket {
+		
+		Date, DepartStation, ArriveStation,SeatType, TicketAmount,FilterDpStation,FilterStatus
+	}
+	
+	public enum MyTicketColumn {
+		DEPART_STATION("1"), ARRIVE_STATION("2"), SEAT_TYPE("3"), DEPART_DATE("4"), AMOUNT("7");
+
+		private String value;
+
+		public String getValue() {
+			return value;
+		}
+
+		private MyTicketColumn(String value) {
+			this.value = value;
+		}
+	}
+	
 	public static class MessageLoginPage {
 
 		public static String MessageLoginAttemptError = "You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.";
@@ -50,6 +69,11 @@ public class Constant {
 
 		public static String PageHeaderText = "Manage ticket";
 
+	}
+	
+	public static class MessageBookTicketPage {
+		
+		public static String BookSuccessfulMessage ="Ticket booked successfully!";
 	}
 
 	public static class MessageChangePasswordPage {

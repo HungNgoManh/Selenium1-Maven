@@ -5,13 +5,16 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import net.bytebuddy.utility.RandomString;
-import testcase.TestBase;
 
-public class Utilities extends TestBase {
+public class Utilities {
 
 	static WebDriver driver;
 	static EmailUtils emailUtils;
@@ -32,6 +35,16 @@ public class Utilities extends TestBase {
 		return randomPassword;
 
 	}
+	
+	public static void waitForDropDownDisplays(By webElement) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver,10);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(webElement));
+		} catch (NoSuchElementException e) {
+		}
+	}
+	
+	
 	/*
 	 * Connect to gmail smtp service to check the new message
 	 * 
