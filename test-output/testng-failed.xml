@@ -3,11 +3,19 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="testcase.TC09_TC12_TC13_Change_Forgot_Password_Test">
-        <methods>
-          <include name="TC13"/>
-        </methods>
-      </class> <!-- testcase.TC09_TC12_TC13_Change_Forgot_Password_Test -->
+      <class name="testcase.TC01_to_TC06_TC08_Test_Login_Page"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="testcase.TC01_to_TC06_TC08_Test_Login_Page">
+        <methods>
+          <include name="TC05"/>
+          <include name="teardown"/>
+          <include name="TC03"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- testcase.TC01_to_TC06_TC08_Test_Login_Page -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

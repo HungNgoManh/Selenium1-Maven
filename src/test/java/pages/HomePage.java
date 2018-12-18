@@ -38,6 +38,9 @@ public class HomePage extends BasePage {
 	@FindBy(xpath = "//span[normalize-space()='Change password']")
 	WebElement changePasswordTab;
 
+	@FindBy(xpath = "//h1")
+	WebElement pageTitle;
+
 	// Go to Homepage
 	public void OpenHomePage() {
 
@@ -48,9 +51,10 @@ public class HomePage extends BasePage {
 	public LoginPage goToLoginPage() {
 
 		click(loginTab);
+		new PageFactory();
 		// I want to chain LoginPage's methods so I return LoginPage by initializing its
 		// elements
-		return new PageFactory().initElements(driver, LoginPage.class);
+		return PageFactory.initElements(driver, LoginPage.class);
 	}
 
 	// Go to Contact
@@ -58,7 +62,8 @@ public class HomePage extends BasePage {
 
 		click(contactTab);
 
-		return new PageFactory().initElements(driver, ContactPage.class);
+		new PageFactory();
+		return PageFactory.initElements(driver, ContactPage.class);
 	}
 
 	// Go to Register Page
@@ -66,7 +71,8 @@ public class HomePage extends BasePage {
 
 		click(registerTab);
 
-		return new PageFactory().initElements(driver, RegisterPage.class);
+		new PageFactory();
+		return PageFactory.initElements(driver, RegisterPage.class);
 	}
 
 	// Go to Change Password Page
@@ -74,7 +80,8 @@ public class HomePage extends BasePage {
 
 		click(changePasswordTab);
 
-		return new PageFactory().initElements(driver, ChangePasswordPage.class);
+		new PageFactory();
+		return PageFactory.initElements(driver, ChangePasswordPage.class);
 	}
 
 	public WebElement getTab(String tabName) {
@@ -92,6 +99,12 @@ public class HomePage extends BasePage {
 
 		WebElement TabElement = getTab(tabname);
 		TabElement.click();
+	}
+
+	// Get page header
+	public String getCurrentHeader() {
+
+		return pageTitle.getText();
 	}
 
 }
