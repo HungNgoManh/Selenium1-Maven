@@ -1,177 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" total="7" passed="5">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="87627" started-at="2018-12-18T06:17:09Z" finished-at="2018-12-18T06:18:36Z">
+  <suite name="Default suite" duration-ms="13529" started-at="2018-12-18T17:11:22Z" finished-at="2018-12-18T17:11:35Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="87627" started-at="2018-12-18T06:17:09Z" finished-at="2018-12-18T06:18:36Z">
-      <class name="testcase.TC01_to_TC06_TC08_Test_Login_Page">
-        <test-method status="PASS" signature="setup()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="setup" is-config="true" duration-ms="7969" started-at="2018-12-18T13:17:09Z" finished-at="2018-12-18T13:17:17Z">
+    <test name="Default test" duration-ms="13529" started-at="2018-12-18T17:11:22Z" finished-at="2018-12-18T17:11:35Z">
+      <class name="testcase.TC14_TC15_TC16">
+        <test-method status="PASS" signature="setup()[pri:0, instance:testcase.TC14_TC15_TC16@68be2bc2]" name="setup" is-config="true" duration-ms="3906" started-at="2018-12-19T00:11:22Z" finished-at="2018-12-19T00:11:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="TC01()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="TC01" duration-ms="6021" started-at="2018-12-18T13:17:17Z" description="Test Login success with correct welcome message" finished-at="2018-12-18T13:17:23Z">
+        <test-method status="PASS" signature="TC14()[pri:0, instance:testcase.TC14_TC15_TC16@68be2bc2]" name="TC14" duration-ms="9046" started-at="2018-12-19T00:11:26Z" description="User can book 1 ticket at a time" finished-at="2018-12-19T00:11:35Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC01 -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="teardown" is-config="true" duration-ms="641" started-at="2018-12-18T13:17:23Z" finished-at="2018-12-18T13:17:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="setup" is-config="true" duration-ms="6958" started-at="2018-12-18T13:17:23Z" finished-at="2018-12-18T13:17:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="TC02()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="TC02" duration-ms="4677" started-at="2018-12-18T13:17:30Z" description="Test Login with blank user name" finished-at="2018-12-18T13:17:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC02 -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="teardown" is-config="true" duration-ms="602" started-at="2018-12-18T13:17:35Z" finished-at="2018-12-18T13:17:36Z">
+        </test-method> <!-- TC14 -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testcase.TC14_TC15_TC16@68be2bc2]" name="teardown" is-config="true" duration-ms="562" started-at="2018-12-19T00:11:35Z" finished-at="2018-12-19T00:11:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="setup" is-config="true" duration-ms="3864" started-at="2018-12-18T13:17:36Z" finished-at="2018-12-18T13:17:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="TC03()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="TC03" duration-ms="3480" started-at="2018-12-18T13:17:39Z" description="Test Login with invalid password" finished-at="2018-12-18T13:17:43Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at org.testng.Assert.assertEquals(Assert.java:200)
-	at testcase.TC01_to_TC06_TC08_Test_Login_Page.TC03(TC01_to_TC06_TC08_Test_Login_Page.java:56)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC03 -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="teardown" is-config="true" duration-ms="647" started-at="2018-12-18T13:17:43Z" finished-at="2018-12-18T13:17:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="setup" is-config="true" duration-ms="3776" started-at="2018-12-18T13:17:44Z" finished-at="2018-12-18T13:17:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="TC04()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="TC04" duration-ms="4790" started-at="2018-12-18T13:17:47Z" description="Test Contact Email contains correct href value" finished-at="2018-12-18T13:17:52Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC04 -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="teardown" is-config="true" duration-ms="631" started-at="2018-12-18T13:17:52Z" finished-at="2018-12-18T13:17:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="setup" is-config="true" duration-ms="6901" started-at="2018-12-18T13:17:53Z" finished-at="2018-12-18T13:18:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="TC05()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="TC05" duration-ms="8425" started-at="2018-12-18T13:18:00Z" description="Check Login attempts error - more than 3 times" finished-at="2018-12-18T13:18:08Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at org.testng.Assert.assertEquals(Assert.java:200)
-	at testcase.TC01_to_TC06_TC08_Test_Login_Page.TC05(TC01_to_TC06_TC08_Test_Login_Page.java:85)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC05 -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="teardown" is-config="true" duration-ms="604" started-at="2018-12-18T13:18:08Z" finished-at="2018-12-18T13:18:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="setup" is-config="true" duration-ms="6341" started-at="2018-12-18T13:18:09Z" finished-at="2018-12-18T13:18:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="TC_06()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="TC_06" duration-ms="7437" started-at="2018-12-18T13:18:15Z" description="Check if Additional pages display once user logged in" finished-at="2018-12-18T13:18:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_06 -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="teardown" is-config="true" duration-ms="605" started-at="2018-12-18T13:18:22Z" finished-at="2018-12-18T13:18:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="setup" is-config="true" duration-ms="6439" started-at="2018-12-18T13:18:23Z" finished-at="2018-12-18T13:18:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="TC_08()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="TC_08" duration-ms="6197" started-at="2018-12-18T13:18:30Z" description="User can&#039;t login with an account hasn&#039;t been activated" finished-at="2018-12-18T13:18:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_08 -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcase.TC01_to_TC06_TC08_Test_Login_Page@7c16905e]" name="teardown" is-config="true" duration-ms="590" started-at="2018-12-18T13:18:36Z" finished-at="2018-12-18T13:18:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- testcase.TC01_to_TC06_TC08_Test_Login_Page -->
+      </class> <!-- testcase.TC14_TC15_TC16 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
