@@ -1,6 +1,6 @@
 package Common;
 
-public class TicketInfo {
+public class TicketInfo  {
 
 	private String departDate;
 	private String departFrom;
