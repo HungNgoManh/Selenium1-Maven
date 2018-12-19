@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="13529" started-at="2018-12-18T17:11:22Z" finished-at="2018-12-18T17:11:35Z">
+  <suite name="Default suite" duration-ms="16177" started-at="2018-12-19T09:26:08Z" finished-at="2018-12-19T09:26:24Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="13529" started-at="2018-12-18T17:11:22Z" finished-at="2018-12-18T17:11:35Z">
+    <test name="Default test" duration-ms="16177" started-at="2018-12-19T09:26:08Z" finished-at="2018-12-19T09:26:24Z">
       <class name="testcase.TC14_TC15_TC16">
-        <test-method status="PASS" signature="setup()[pri:0, instance:testcase.TC14_TC15_TC16@68be2bc2]" name="setup" is-config="true" duration-ms="3906" started-at="2018-12-19T00:11:22Z" finished-at="2018-12-19T00:11:26Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:testcase.TC14_TC15_TC16@5649fd9b]" name="setup" is-config="true" duration-ms="5028" started-at="2018-12-19T16:26:08Z" finished-at="2018-12-19T16:26:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="TC14()[pri:0, instance:testcase.TC14_TC15_TC16@68be2bc2]" name="TC14" duration-ms="9046" started-at="2018-12-19T00:11:26Z" description="User can book 1 ticket at a time" finished-at="2018-12-19T00:11:35Z">
+        <test-method status="PASS" signature="TC14()[pri:0, instance:testcase.TC14_TC15_TC16@5649fd9b]" name="TC14" duration-ms="10449" started-at="2018-12-19T16:26:13Z" description="User can book 1 ticket at a time" finished-at="2018-12-19T16:26:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC14 -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcase.TC14_TC15_TC16@68be2bc2]" name="teardown" is-config="true" duration-ms="562" started-at="2018-12-19T00:11:35Z" finished-at="2018-12-19T00:11:35Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testcase.TC14_TC15_TC16@5649fd9b]" name="teardown" is-config="true" duration-ms="682" started-at="2018-12-19T16:26:23Z" finished-at="2018-12-19T16:26:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
