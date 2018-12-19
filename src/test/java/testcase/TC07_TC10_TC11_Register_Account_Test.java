@@ -50,7 +50,7 @@ public class TC07_TC10_TC11_Register_Account_Test extends TestBase {
 		// Step 3: Enter valid information into all fields except "Confirm password" is
 		// not the same with "Password"
 		page.GetInstance(RegisterPage.class).RegisterNewUser(Utilities.EmailGenerator(), Constant.PASSWORD,
-				RandomString.make(8), Constant.PID);
+				Utilities.RandomPassword(), Constant.PID);
 		// VP: Message "There're errors in the form. Please correct the errors and try
 		// again." appears.
 		Assert.assertEquals(page.GetInstance(RegisterPage.class).GetMessageAfterRegisterAccount(),

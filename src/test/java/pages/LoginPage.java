@@ -46,10 +46,7 @@ public class LoginPage extends BasePage {
 
 	@FindBy(xpath = "//input[@title='Login']")
 	WebElement btnLogin;
-	// For test xpath training ^^
-	@FindBy(xpath = "//body/div//div[@id='content']/following-sibling::div//p")
-	WebElement PageFooter;
-
+	
 	@FindBy(xpath = "//body/child::div/div[@id='content']/p[starts-with(@class,'message')]")
 	WebElement MessageLoginForm;
 
@@ -58,16 +55,6 @@ public class LoginPage extends BasePage {
 	
 	@FindBy(xpath="//label[@class='validation-error' and @for ='confirmPassword']")
 	WebElement lblConfirmPassword;
-
-	// For test xpath training ^^
-	@FindBy(xpath = "//body/child::div/div[@id='content']/p[normalize-space(@text())='']")
-	WebElement LoginErrorMessage2;
-	// For test xpath training ^^
-	@FindBy(xpath = "//ancestor::select[@name='Date']")
-	WebElement drbDepartDate;
-	// For test xpath training ^^
-	@FindBy(xpath = "//div[@id='page']/div//li/parent::ul/preceding::div/following::div/h1[text()='Book ticket']")
-	WebElement BookTicketPageTitle;
 
 	@FindBy(xpath = "//a[@href='/Account/ForgotPassword.cshtml']")
 	WebElement ForgotPasswordLink;
@@ -92,19 +79,17 @@ public class LoginPage extends BasePage {
 		Constant.WelcomeMessageLogin = Constant.WELCOME + strUserName;
 	}
 
+	// Get Tab to check if it displayed or not
 	public WebElement getTab(String tabName) {
 		return driver.findElement(By.xpath(String.format("//span[normalize-space()='%s']", tabName)));
 	}
 
+	// Get the form to check if it displayed or not
 	public WebElement PasswordChangeForm() {
 
 		return driver.findElement(By.xpath("//legend[contains(text(),'Password Change Form')]"));
 	}
 
-	public WebElement ResetTokenTextBox() {
-
-		return driver.findElement(By.id("resetToken"));
-	}
 
 	// Set user name in textbox
 	public void setUserName(String strUserName) {
@@ -212,7 +197,7 @@ public class LoginPage extends BasePage {
 		driver.navigate().to(Link.get(0));
 
 	}
-
+	// Reset password function
 	public void resetPassword(String newpass, String confirmpass, String resettoken) {
 
 		this.newPassword.clear();

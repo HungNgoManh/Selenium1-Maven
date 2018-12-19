@@ -160,7 +160,7 @@ public class TC09_TC12_TC13_Change_Forgot_Password_Test extends TestBase {
 		Assert.assertTrue(page.GetInstance(LoginPage.class).PasswordChangeForm().isDisplayed());
 
 		// Step 6: Enter different values for password fields
-		page.GetInstance(LoginPage.class).resetPassword(Constant.NEW_PASSWORD, RandomString.make(8),
+		page.GetInstance(LoginPage.class).resetPassword(Constant.NEW_PASSWORD,Utilities.RandomPassword(),
 				Keys.chord(Keys.NULL));
 
 		// VP: Error message "Could not reset password. Please correct the errors and

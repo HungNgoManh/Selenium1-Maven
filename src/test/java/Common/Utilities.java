@@ -1,5 +1,7 @@
 package Common;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -34,6 +36,16 @@ public class Utilities {
 		String randomPassword = RandomString.make(8);
 		return randomPassword;
 
+	}
+	
+	// Generate random date
+		
+	public static String bookRandomDate() {
+		LocalDate baseDate = LocalDate.now().plusDays(3);
+		Integer maxRandomValue = 27;
+		Integer randomDays = (int) (maxRandomValue * Math.random());
+		LocalDate randomDate = baseDate.plusDays(randomDays);
+		return DateTimeFormatter.ofPattern("M/d/yyyy").format(randomDate);
 	}
 	
 	public static void waitForDropDownDisplays(By webElement) {

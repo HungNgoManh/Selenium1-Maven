@@ -49,7 +49,7 @@ public class TC01_to_TC06_TC08_Test_Login_Page extends TestBase {
 		page.GetInstance(HomePage.class).OpenHomePage();
 
 		// Step 2: Go to Login page and login with empty username and valid password
-		page.GetInstance(HomePage.class).goToLoginPage().loginToRailway(Constant.USERNAME, RandomString.make(8));
+		page.GetInstance(HomePage.class).goToLoginPage().loginToRailway(Constant.USERNAME, Utilities.RandomPassword());
 
 		// VP: User can't login and message "There was a problem with your login and/or
 		// errors exist in your form. " appears.
@@ -78,7 +78,8 @@ public class TC01_to_TC06_TC08_Test_Login_Page extends TestBase {
 
 		// Step 2: Go to Login page and login with valid username and valid password for
 		// 4 time
-		page.GetInstance(HomePage.class).goToLoginPage().LoginMultiTime(Constant.USERNAME, RandomString.make(8), 4);
+		page.GetInstance(HomePage.class).goToLoginPage().LoginMultiTime(Constant.USERNAME, Utilities.RandomPassword(),
+				4);
 		// VP: User can't login and message "You have used 4 out of 5 login attempts.
 		// After all 5 have been used, you will be unable to login for 15 minutes."
 		// appears.

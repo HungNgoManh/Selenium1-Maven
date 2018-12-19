@@ -14,9 +14,9 @@ import pages.RegisterPage;
 
 public class TC14_TC15_TC16 extends TestBase {
 
-	// Init new ticket need to book!
-	TicketInfo newTicket = new TicketInfo ("12/31/2018", "Sài Gòn",
-			"Nha Trang", "Soft bed with air conditioner", "1");
+	// Init new ticket need to book! using a random depart date
+	TicketInfo newTicket = new TicketInfo(Utilities.bookRandomDate(), "Sài Gòn", "Nha Trang",
+			"Soft bed with air conditioner", "1");
 
 	@Test(description = "User can book 1 ticket at a time")
 	public void TC14() {
@@ -26,14 +26,14 @@ public class TC14_TC15_TC16 extends TestBase {
 		 */
 
 		// Step 1: Open Railway page
-	//	page.GetInstance(HomePage.class).OpenHomePage();
+		page.GetInstance(HomePage.class).OpenHomePage();
 
 		// Step 2: Create new account
-	//	page.GetInstance(HomePage.class).goToRegisterPage().RegisterNewUser(Utilities.EmailGenerator(),
-		//		Constant.PASSWORD, Constant.PASSWORD, Constant.PID);
+		page.GetInstance(HomePage.class).goToRegisterPage().RegisterNewUser(Utilities.EmailGenerator(),
+				Constant.PASSWORD, Constant.PASSWORD, Constant.PID);
 
 		// Step 3: Active account
-	//	page.GetInstance(RegisterPage.class).ActiveEmail();
+		page.GetInstance(RegisterPage.class).ActiveEmail();
 
 		/*
 		 * Testcase steps:

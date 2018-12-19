@@ -99,6 +99,7 @@ public class HomePage extends BasePage {
 		return driver.findElement(By.xpath(String.format("//span[normalize-space()='%s']", tabName)));
 	}
 
+	// Get page header content for all pages
 	public String getPageHeader(String tabname) {
 
 		WebElement header = driver.findElement(By.xpath("//h1[@align='center']"));
