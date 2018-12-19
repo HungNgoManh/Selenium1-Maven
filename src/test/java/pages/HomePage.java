@@ -37,6 +37,9 @@ public class HomePage extends BasePage {
 
 	@FindBy(xpath = "//span[normalize-space()='Change password']")
 	WebElement changePasswordTab;
+	
+	@FindBy(xpath = "//span[normalize-space()='Timetable']")
+	WebElement TimetableTab;
 
 	@FindBy(xpath = "//h1")
 	WebElement pageTitle;
@@ -92,6 +95,15 @@ public class HomePage extends BasePage {
 		new PageFactory();
 		return PageFactory.initElements(driver, BookTicketPage.class);
 	}
+	
+	// Go to Timetable page
+		public TimeTablePage goToTimetablePage() {
+
+			click(TimetableTab);
+
+			new PageFactory();
+			return PageFactory.initElements(driver, TimeTablePage.class);
+		}
 
 	
 	// Get Tab to check if Tab is displayed??
@@ -100,7 +112,7 @@ public class HomePage extends BasePage {
 	}
 
 	// Get page header content for all pages
-	public String getPageHeader(String tabname) {
+	public String getPageHeader() {
 
 		WebElement header = driver.findElement(By.xpath("//h1[@align='center']"));
 		return header.getText();

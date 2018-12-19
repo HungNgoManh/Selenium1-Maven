@@ -5,9 +5,20 @@
     <classes>
       <class name="testcase.TC14_TC15_TC16">
         <methods>
-          <include name="TC14"/>
+          <include name="TC15"/>
         </methods>
       </class> <!-- testcase.TC14_TC15_TC16 -->
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="testcase.TC14_TC15_TC16">
+        <methods>
+          <include name="TC15"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- testcase.TC14_TC15_TC16 -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

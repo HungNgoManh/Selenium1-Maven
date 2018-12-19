@@ -65,9 +65,10 @@ public class Constant {
 
 	}
 
-	public static class MessageMyTicketPage {
+	public static class MessageHeaderPage {
 
-		public static String PageHeaderText = "Manage ticket";
+		public static String ManageTicketPageHeaderText = "Manage ticket";
+		public static String TimetablePageHeaderText ="Ticket Price";
 
 	}
 	

@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 
 import Common.Constant;
 import Common.Utilities;
-import net.bytebuddy.utility.RandomString;
 import pages.ChangePasswordPage;
 import pages.HomePage;
 import pages.LoginPage;

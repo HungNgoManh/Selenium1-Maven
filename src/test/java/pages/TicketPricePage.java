@@ -2,10 +2,10 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 
-public class MyTicketPage extends BasePage {
+public class TicketPricePage extends  BasePage {
 	
 	// *********Constructor*********
-		public MyTicketPage (WebDriver driver) {
+		public TicketPricePage (WebDriver driver) {
 			super(driver);
 		}
 
@@ -13,5 +13,7 @@ public class MyTicketPage extends BasePage {
 	 * All WebElements are identified by @FindBy annotation
 	 */
 	
-	
+		
 }
+
+

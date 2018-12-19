@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 
 import Common.Constant;
 import Common.Utilities;
-import net.bytebuddy.utility.RandomString;
 import pages.ContactPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -109,15 +108,15 @@ public class TC01_to_TC06_TC08_Test_Login_Page extends TestBase {
 		page.GetInstance(HomePage.class).clickTab(Constant.TAB_MY_TICKET);
 
 		// VP: User will be directed to My ticket page
-		Assert.assertEquals(page.GetInstance(HomePage.class).getPageHeader(Constant.TAB_MY_TICKET),
-				Constant.MessageMyTicketPage.PageHeaderText);
+		Assert.assertEquals(page.GetInstance(HomePage.class).getPageHeader(),
+				Constant.MessageHeaderPage.ManageTicketPageHeaderText);
 
 		// Step 4: Click Change password tab
 		page.GetInstance(HomePage.class).clickTab(Constant.TAB_CHANGE_PASSWORD);
 
 		// VP: Click "Change password" tab, user will be directed to Change password
 		// page
-		Assert.assertEquals(page.GetInstance(HomePage.class).getPageHeader(Constant.TAB_CHANGE_PASSWORD),
+		Assert.assertEquals(page.GetInstance(HomePage.class).getPageHeader(),
 				Constant.MessageChangePasswordPage.PageHeaderText);
 
 	}
