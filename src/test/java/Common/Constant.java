@@ -25,10 +25,11 @@ public class Constant {
 	public static String TAB_MY_TICKET = "My ticket";
 	public static String TAB_CONTACT = "Contact";
 	public static String TAB_REGISTER = "Register";
+	public static String TAB_BOOK_TICKET = "Book ticket";
 
 	public enum ListBookTicket {
 		
-		Date, DepartStation, ArriveStation,SeatType, TicketAmount,FilterDpStation,FilterStatus
+		Date, DepartStation, ArriveStation,SeatType, TicketAmount,FilterDpStation,FilterStatus, FilterArStation,
 	}
 	
 	public enum MyTicketColumn {
@@ -75,6 +76,11 @@ public class Constant {
 	public static class MessageBookTicketPage {
 		
 		public static String BookSuccessfulMessage ="Ticket booked successfully!";
+	}
+	
+	public static class MessageMyTicketPage {
+		
+		public static String FilterErrorMessage ="Sorry, can't find any results that match your filters."+ "\n" + "Please change the filters and try again.";
 	}
 
 	public static class MessageChangePasswordPage {

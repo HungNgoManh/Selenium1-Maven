@@ -37,9 +37,12 @@ public class HomePage extends BasePage {
 
 	@FindBy(xpath = "//span[normalize-space()='Change password']")
 	WebElement changePasswordTab;
-	
+
 	@FindBy(xpath = "//span[normalize-space()='Timetable']")
 	WebElement TimetableTab;
+	
+	@FindBy(xpath = "//span[normalize-space()='My ticket']")
+	WebElement MyticketTab;
 
 	@FindBy(xpath = "//h1")
 	WebElement pageTitle;
@@ -95,17 +98,25 @@ public class HomePage extends BasePage {
 		new PageFactory();
 		return PageFactory.initElements(driver, BookTicketPage.class);
 	}
-	
+
 	// Go to Timetable page
-		public TimeTablePage goToTimetablePage() {
+	public TimeTablePage goToTimetablePage() {
 
-			click(TimetableTab);
+		click(TimetableTab);
 
-			new PageFactory();
-			return PageFactory.initElements(driver, TimeTablePage.class);
-		}
+		new PageFactory();
+		return PageFactory.initElements(driver, TimeTablePage.class);
+	}
 
-	
+	// Go to Timetable page
+	public MyTicketPage goToMyTicketPage() {
+
+		click(MyticketTab);
+
+		new PageFactory();
+		return PageFactory.initElements(driver, MyTicketPage.class);
+	}
+
 	// Get Tab to check if Tab is displayed??
 	public WebElement getTab(String tabName) {
 		return driver.findElement(By.xpath(String.format("//span[normalize-space()='%s']", tabName)));

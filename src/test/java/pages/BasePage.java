@@ -51,4 +51,15 @@ public class BasePage extends PageGenerator {
             Thread.sleep(200);
         }
     }
+    // Get Tab to click function
+    public WebElement getTab(String tabName) {
+		return driver.findElement(By.xpath(String.format("//span[normalize-space()='%s']", tabName)));
+	}
+    
+    // Click on a tab
+    public void clickTab(String tabname) {
+
+		WebElement TabElement = getTab(tabname);
+		TabElement.click();
+	}
 }

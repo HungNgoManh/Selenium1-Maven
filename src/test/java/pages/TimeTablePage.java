@@ -1,5 +1,6 @@
 package pages;
 
+import java.lang.Character.UnicodeBlock;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -34,7 +35,8 @@ public class TimeTablePage extends BasePage {
 	public int TrainNumber(String from, String to) {
 
 		int row;
-		String[] celtext = { "", "" };
+		 
+		
 		List<WebElement> rows_table = trainTimetable.findElements(By.tagName("tr"));
 		// To calculate no of rows In table.
 		int rows_count = rows_table.size();
@@ -46,23 +48,24 @@ public class TimeTablePage extends BasePage {
 			List<WebElement> Columns_row = rows_table.get(row).findElements(By.tagName("td"));
 			// To calculate no of columns (cells). In that specific row.
 			// int columns_count = Columns_row.size();
-			int columns_count = 3;
+			int columns_count = 2;
 			// System.out.println("Number of cells In Row " + row + " are " +
 			// columns_count);
 			
-			if ((celtext[0] == from ) && (celtext[1] == to)) break;
+			//final String[] celtext = new String [2] ;
 			// Loop will execute till the last cell of that specific row.
-			for (int column = 2; column <= columns_count; column++) {
+			for (int column = 1; column <= columns_count; column++) {
 				
 				String abc = Columns_row.get(column).getText();
-				int i = 0;
-				celtext[i] = abc;
-				i++;
-				
-				
-				// System.out.println("Cell Value of row number " + row + " and column number "
+				 					
+					System.out.println(abc);
+												
+				// System.out.println (celtext[i]);
+				 if (Columns_row.get(1).equals("Đà Nẵng")  && Columns_row.get(2).equals("Sài Gòn"))
+					break;
+				 
 				// + column + " Is " + celtext);
-			}  
+			} 
 			
 		} return row;
 		

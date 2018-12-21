@@ -17,6 +17,7 @@ public class TestBase {
         //Create a Chrome driver. All test classes use this.
     	System.setProperty("webdriver.chrome.driver", "Driver\\chromedriver.exe");
         driver = new ChromeDriver();
+       
  
         //Create a wait. All test classes use this.
         wait = new WebDriverWait(driver,15);

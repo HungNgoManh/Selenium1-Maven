@@ -16,7 +16,7 @@ import pages.TimeTablePage;
 public class TC14_TC15_TC16 extends TestBase {
 
 	// Init new ticket need to book! using a random depart date
-	TicketInfo newTicket = new TicketInfo(Utilities.bookRandomDate(), "SÃ i GÃ²n", "Nha Trang",
+	TicketInfo newTicket = new TicketInfo(Utilities.bookRandomDate(), "Sài Gòn", "Nha Trang",
 			"Soft bed with air conditioner", "1");
 
 	@Test(description = "User can book 1 ticket at a time")

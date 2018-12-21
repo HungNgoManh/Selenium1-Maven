@@ -64,7 +64,7 @@ public class Utilities {
 	public static void connectToEmail() {
 
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(4000);
 			emailUtils = new EmailUtils(Constant.USERNAME, Constant.PASSWORD, Constant.gmail_service,
 					EmailUtils.EmailFolder.INBOX);
 		} catch (Exception e) {
@@ -77,7 +77,7 @@ public class Utilities {
 
 		public static String GetActivationEmail() {
 			try {
-
+				Thread.sleep(2000);
 				String EmailContent = emailUtils.getAuthorizationCode(Constant.EMAIL_NEWLY_CREATE);
 				return EmailContent;
 
