@@ -64,7 +64,6 @@ public class FTTC01_FTTC02 extends TestBase {
 		 *   - Compare the ticket for target Depart station Before and After filter, they must be the same
 		 *   - In the Filter of target Depart station, there must be NO different depart station ticket. 
 		 */
-		
 		// VP: Compare the amount
 		Assert.assertEquals(ticketnumberBeforeFilter, ticketnumberAfterFilter);
 		

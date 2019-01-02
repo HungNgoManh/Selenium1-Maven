@@ -3,22 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="testcase.TC14_TC15_TC16">
+      <class name="testcase.TC01_to_TC06_TC08_Test_Login_Page">
         <methods>
-          <include name="TC15"/>
+          <include name="TC01"/>
         </methods>
-      </class> <!-- testcase.TC14_TC15_TC16 -->
+      </class> <!-- testcase.TC01_to_TC06_TC08_Test_Login_Page -->
     </classes>
   </test> <!-- Default test -->
-  <test name="Default test(failed)">
-    <classes>
-      <class name="testcase.TC14_TC15_TC16">
-        <methods>
-          <include name="TC15"/>
-          <include name="teardown"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- testcase.TC14_TC15_TC16 -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

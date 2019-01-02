@@ -3,15 +3,12 @@ package Common;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import net.bytebuddy.utility.RandomString;
@@ -48,24 +45,19 @@ public class Utilities {
 		return DateTimeFormatter.ofPattern("M/d/yyyy").format(randomDate);
 	}
 	
-	public static void waitForDropDownDisplays(By webElement) {
-		try {
-			WebDriverWait wait = new WebDriverWait(driver,10);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(webElement));
-		} catch (NoSuchElementException e) {
-		}
-	}
-	
-	
+		
 	/*
 	 * Connect to gmail smtp service to check the new message
 	 * 
 	 */
 	public static void connectToEmail() {
+		
+		byte[] decodedBytes = Base64.getDecoder().decode(Constant.PASSWORD2);
+		String pass = new String(decodedBytes);
 
 		try {
 			Thread.sleep(4000);
-			emailUtils = new EmailUtils(Constant.USERNAME, Constant.PASSWORD, Constant.gmail_service,
+			emailUtils = new EmailUtils(Constant.USERNAME, pass , Constant.gmail_service,
 					EmailUtils.EmailFolder.INBOX);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -77,7 +69,7 @@ public class Utilities {
 
 		public static String GetActivationEmail() {
 			try {
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 				String EmailContent = emailUtils.getAuthorizationCode(Constant.EMAIL_NEWLY_CREATE);
 				return EmailContent;
 

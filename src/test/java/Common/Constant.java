@@ -8,7 +8,8 @@ public class Constant {
 
 	public static String URLTest = "http://logigearrailway.somee.com";
 	public static String USERNAME = "hung.ngo.test@gmail.com";
-	public static String PASSWORD = "Matkhau~1";
+	public static String PASSWORD = "";
+	public static String PASSWORD2 = "TWF0a2hhdX4x";
 	public static String NEW_PASSWORD = "87654321";
 	public static String WELCOME = "Welcome ";
 	public static String EmailContact = "mailto:thanh.viet.le@logigear.com";
@@ -57,7 +58,6 @@ public class Constant {
 	}
 	
 	
-
 	public static class MessageRegisterPage {
 
 		public static String MessageFormError = "There're errors in the form. Please correct the errors and try again.";

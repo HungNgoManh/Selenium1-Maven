@@ -1,6 +1,5 @@
 package pages;
 
-import java.lang.Character.UnicodeBlock;
 import java.util.List;
 
 import org.openqa.selenium.By;
